@@ -4,7 +4,8 @@ import ContactForm from './components/ContactForm/ContactForm';
 import Footer from './components/Footer/Footer';
 import GoogleMap from './components/GoogleMap/GoogleMap';
 import ModalMenu from './components/ModalMenu/ModalMenu';
-
+import { ThemeProvider } from 'styled-components';
+import { theme } from './styles/media';
 
 const App: React.FC = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -14,7 +15,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div>
+    <ThemeProvider theme={theme}>
       <Header onMenuToggle={toggleMenu} />
       <main>
         {/* Контент сторінки */}
@@ -23,7 +24,7 @@ const App: React.FC = () => {
       </main>
       <Footer />
       {isMenuOpen && <ModalMenu onClose={toggleMenu} />}
-    </div>
+    </ThemeProvider>
   );
 };
 
