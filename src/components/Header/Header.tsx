@@ -9,7 +9,7 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ onMenuToggle }) => {
   return (
     <HeaderContainer>
-      <Logo>MySite</Logo>
+      <Logo>MyLogo</Logo>
       <Nav>
         <ul>
           <li>Home</li>
